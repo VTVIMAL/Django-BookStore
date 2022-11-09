@@ -37,9 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     # Third Party
     'crispy_forms',
     'crispy_bootstrap5',
+    'allauth',
+    'allauth.account',
     #LOCAL
     'accounts.apps.AccountsConfig',
     'pages.apps.PagesConfig',
@@ -137,8 +140,23 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
-LOGIN_REDIRECT_URL = "home"
-LOGOUT_REDIRECT_URL = "home"
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
 CRISPY_TEMPLATE_PACK = "bootstrap5" 
+
+#django_allauth_config
+LOGIN_REDIRECT_URL = "home"
+# LOGOUT_REDIRECT_URL = "home"
+ACCOUNT_LOGOUT_REDIRECT = "home" # since we use the allauth
+SITE_ID = 1
+AUTHENTICATION_BACKNENDS = ( # this was already provided in the django settings but was not visible to the user 
+    "django.contrib.auth.backends.ModelBackends",  # this is the backend model provided by django by default
+    "allauth.account.auth_backends.AuthenticationBackend", # this is the allauth backend we provide to login using e-mail.
+)
+ACCOUNT_SESSION_REMEMBER = True # remember the user account
+ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False # do not ask to enter password twice during signup
+ACCOUNT_USERNAME_REQUIRED = False  # the username will no longer be a required field
+ACCOUNT_AUTHENTICATION_METHOD = 'email' # set email as the default account authentication method
+ACCOUNT_EMAIL_REQUIRED = True # set email as a required field
+ACCOUNT_UNIQUE_EMAIL = True # require that only one email for a user.
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
