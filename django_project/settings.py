@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
-from environs import Env
+from environs import Env # enviroment variables 
 
 env = Env()
 env.read_env()
@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     #LOCAL
     'accounts.apps.AccountsConfig',
     'pages.apps.PagesConfig',
+    'books.apps.BooksConfig',
 ]
 
 MIDDLEWARE = [
@@ -164,4 +165,8 @@ ACCOUNT_USERNAME_REQUIRED = False  # the username will no longer be a required f
 ACCOUNT_AUTHENTICATION_METHOD = 'email' # set email as the default account authentication method
 ACCOUNT_EMAIL_REQUIRED = True # set email as a required field
 ACCOUNT_UNIQUE_EMAIL = True # require that only one email for a user.
+
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+DEFAULT_FROM_EMAIL = 'admin@djangobookstore.com'
+
