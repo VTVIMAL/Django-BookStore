@@ -155,8 +155,8 @@ LOGIN_REDIRECT_URL = "home"
 # LOGOUT_REDIRECT_URL = "home"
 ACCOUNT_LOGOUT_REDIRECT = "home" # since we use the allauth
 SITE_ID = 1
-AUTHENTICATION_BACKNENDS = ( # this was already provided in the django settings but was not visible to the user 
-    "django.contrib.auth.backends.ModelBackends",  # this is the backend model provided by django by default
+AUTHENTICATION_BACKENDS = ( # this was already provided in the django settings but was not visible to the user 
+    "django.contrib.auth.backends.ModelBackend",  # this is the backend model provided by django by default
     "allauth.account.auth_backends.AuthenticationBackend", # this is the allauth backend we provide to login using e-mail.
 )
 ACCOUNT_SESSION_REMEMBER = True # remember the user account
