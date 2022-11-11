@@ -139,6 +139,10 @@ STATICFILES_DIRS = [ BASE_DIR / "static"]
 STATIC_ROOT =  BASE_DIR / "staticfiles"  # all collected staticfiles using collectstatic will be storred in this root directory named staticfiles
 STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage" # file storage engine used when collecting static files   
 
+# User media uploads
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / "media"
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
@@ -169,4 +173,5 @@ ACCOUNT_UNIQUE_EMAIL = True # require that only one email for a user.
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 DEFAULT_FROM_EMAIL = 'admin@djangobookstore.com'
+
 
