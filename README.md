@@ -1,5 +1,5 @@
 # Django-BookStore
-A djanog bookstore project done while covering Django For Professionals
+A djanog bookstore project done while covering **Django For Professionals**
 credits: William S. Vincent
 
 # BookList
