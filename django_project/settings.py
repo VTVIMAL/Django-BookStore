@@ -31,6 +31,8 @@ DEBUG = env.bool('DEBUG')
 
 ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
 
+INTERNAL_IPS = ["127.0.0.1"]
+
 
 # Application definition
 
@@ -47,6 +49,7 @@ INSTALLED_APPS = [
     'crispy_bootstrap5',
     'allauth',
     'allauth.account',
+    'debug_toolbar',
     #LOCAL
     'accounts.apps.AccountsConfig',
     'pages.apps.PagesConfig',
@@ -61,6 +64,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'django_project.urls'

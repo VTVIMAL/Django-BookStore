@@ -3,9 +3,9 @@
 {% block title %}Search{% endblock title %}
 
 {% block content %}
-<h1>Search Results</h1>
+<h1 class="text-center">Search Results</h1>
 {% for book in book_list %}
-<div>
+<div class="card p-3">
     <h3><a href="{{ book.get_absolute_url }}">{{ book.title }}</a></h3>
     <p>Author: {{ book.author }}</p>
     <p>Price: {{ book.price }}</p>
