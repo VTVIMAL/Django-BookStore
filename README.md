@@ -12,5 +12,5 @@ credits: William S. Vincent
 # Search Book
 ![](https://github.com/VTVIMAL/Django-BookStore/blob/master/BookStore%20Search.gif)
 
-#Logout 
+# Logout 
 ![](https://github.com/VTVIMAL/Django-BookStore/blob/master/Logout.png)
